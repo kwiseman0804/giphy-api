@@ -31,8 +31,8 @@ function addNewButton(){
     // Doesnt work properly yet removes all of the added buttons
     // rather than just the last
 function removeLastButton(){
-    $("removeGif").on("click", function(){
-    topics.pop(topic);
+    $("#removeGif").on("click", function(){
+    topics.pop();
     displayGifButtons();
     return false;
     });
@@ -82,7 +82,7 @@ removeLastButton();
 $(document).on("click", ".topic", displayGifs);
 $(document).on("click", ".image", function(){
     var state = $(this).attr('data-state');
-    if ( state == 'still'){
+    if ( state === 'still'){
         $(this).attr('src', $(this).data('animate'));
         $(this).attr('data-state', 'animate');
     }else{
